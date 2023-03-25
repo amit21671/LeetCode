@@ -1,12 +1,13 @@
 var maxSubArray = function(nums) {
-    if (nums.length ==1) return nums[0];
-    let currMax = nums[0];
-    let history = nums[0];
-    for (i=1; i<nums.length; i++){
-        history = Math.max(history+nums[i], nums[i]);
-        currMax = Math.max(history, currMax)
+    if(!nums.length) return 0;
+    if(nums.length===1) return nums[0];
+    let ans=nums[0];
+    let history=nums[0];
+    for(let i=1;i<nums.length;i++){
+        history=Math.max(nums[i],history+nums[i]);
+        ans=Math.max(history,ans)
     }
-    return currMax;
+    return ans;
 };
 
 console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])); //6
@@ -20,6 +21,21 @@ console.log(maxSubArray([-2,-1])); //-1
 
 
 
+
+
+
+
+
+
+
+// if (nums.length ==1) return nums[0];
+// let currMax = nums[0];
+// let history = nums[0];
+// for (i=1; i<nums.length; i++){
+//     history = Math.max(history+nums[i], nums[i]);
+//     currMax = Math.max(history, currMax)
+// }
+// return currMax;
 
 
 
